@@ -12,27 +12,27 @@ updated="^All packages are up-to-date"
 
 ## Shows a passive popup Looking for updates
 snd_begin(){
-	kdialog --icon ~/Scripts/update.png --title"Update" --passivepopup \
+	kdialog --icon ~/Scripts/update.png --title"$title" --passivepopup \
 	"Looking for updates" 2
 }
 ## Shows a passive popup when the update ends with an error
 snd_error(){
-	kdialog --icon ~/Scripts/updateF.png --title "Update" --passivepopup \
+	kdialog --icon ~/Scripts/updateF.png --title "$title" --passivepopup \
 	"Updating error" 5
 }
 ## Shows a passive popup when there are no updates aviable
 snd_noUpdate(){
-	kdialog --icon ~/Scripts/updateF.png --title "Update" --passivepopup \
+	kdialog --icon ~/Scripts/updateF.png --title "$title" --passivepopup \
 	"System is up to date" 5
 }
 ## Shows a passive popup when the update finish correctly
 snd_complete(){
-	kdialog --icon ~/Scripts/update.png --title "Update" --passivepopup \
+	kdialog --icon ~/Scripts/update.png --title "$title" --passivepopup \
 	"System updated" 5
 }
 ## Shows a passive popup when the user cancels the update
 snd_cancel(){
-	kdialog --icon ~/Scripts/updateF.png --title "Update" --passivepopup \
+	kdialog --icon ~/Scripts/updateF.png --title "$title" --passivepopup \
 	"Update canceled" 2
 }
 
