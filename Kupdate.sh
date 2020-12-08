@@ -26,7 +26,7 @@ case "$lang" in
 		completeMsg="Actualización completa"				## System updated
 		cancelMsg="Actualización cancelada"					## Update canceled
 		;; 
-	*)	## The Default Language is in English
+	*)	## The Default Language is English
 		title="Kupdate"										## Declare de title in your language 
 		message="Write your SU password" 					## Write the SU password			
 		updated="^All packages are up-to-date"			 	## The string to be looked if everything is up to date | run sudo apt update in a terminal and look for the final result
