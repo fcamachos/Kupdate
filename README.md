@@ -6,6 +6,10 @@ A little script to keep the system Updated with just one click
 This script runs de *sudo apt update* to look for updates of your system. If there are updates aviable, it will try to do a *sudo apt upgrade*.
 Every step will be followed with a *kool* notification in the corner of your screen thanks to the *kdialog* component.
 
+![AskSUPass](assets/Screenshot_1.png?raw=true "Ask for SU password")
+![Look4Update](assets/Screenshot_2.png?raw=true "Looking For Updates")
+![Fail](assets/Screenshot_3.png?raw=true "Failing on Update")
+
 ### Why a script this simple? 
 
 This is my first aproach to contibute with the great world of Linux, specially KDE wich gave me some of the *koolest* moments of my life.
