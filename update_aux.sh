@@ -1,5 +1,10 @@
 #!/bin/bash 
 
+###############################################################
+##						Auxiliar Script
+###############################################################
+## Author: fcamachos
+
 ## Check if the update command has the key word when system is updated
 log= apt update 2>&1 | grep -i "$1" ##"$updated"
 echo $log
