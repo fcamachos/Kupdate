@@ -11,7 +11,7 @@ echo $log
 ## If system is updated do nothing
 if apt update 2>&1 | grep -i "$1" ; then    
     echo "up to date"
-    exit 1      #snd_noUpdate
+    exit 3      #snd_noUpdate
 ## If there are updates aviable run the upgrade
 else
     echo "update needed"
