@@ -79,7 +79,7 @@ if [ $? = 0 ]; then
 	## send the notification of begining
  	snd_begin
 	## run the aux script with SU privileges!
-	echo $PASSWD | sudo -S sh update_aux.sh "$updated"
+	echo $PASSWD | sudo -S sh "$SCRIPTPATH"/update_aux.sh "$updated"
 	## check the exit code of the aux script
 	case $? in
 		0)
