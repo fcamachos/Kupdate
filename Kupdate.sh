@@ -19,7 +19,6 @@ case "$lang" in
 	es)			
 		title="Kupdate"										## Declare de title in your language 
 		message="Escribe tu contraseña de Super Usuario" 	## Write the SU password			
-		updated="^Todos los paquetes están actualizados" 	## The string to be looked if everything is up to date | run sudo apt update in a terminal and look for the final result
 		beginMsg="Buscando actualizaciones" 				## Looking for updates
 		errorMsg="Error de actualización"					## Updating error
 		noUpdateMsg="No hay actualizaciones disponibles"	## System is up to date
@@ -30,7 +29,6 @@ case "$lang" in
 	*)	## The Default Language is English
 		title="Kupdate"										## Declare de title in your language 
 		message="Write your SU password" 					## Write the SU password			
-		updated="^All packages are up-to-date"			 	## The string to be looked if everything is up to date | run sudo apt update in a terminal and look for the final result
 		beginMsg="Looking for updates"						## Looking for updates
 		errorMsg="Updating error"							## Updating error
 		noUpdateMsg="System is up to date"					## System is up to date
@@ -86,7 +84,7 @@ if [ $? = 0 ]; then
 	## send the notification of begining
  	snd_begin
 	## run the aux script with SU privileges!
-	echo $PASSWD | sudo -S sh "$SCRIPTPATH"/update_aux.sh "$updated" 
+	echo $PASSWD | sudo -S sh "$SCRIPTPATH"/update_aux.sh
 	## check the exit code of the aux script
 	case $? in
 		0)
