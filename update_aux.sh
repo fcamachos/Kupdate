@@ -19,7 +19,7 @@ else
     ## Example: apt upgrade -y 2>&1 | tee -a /tmp/logfile.log
     apt upgrade -y 2>&1 | tee /tmp/KupdateLogfile.log
     echo "exit code $?"
-    if grep -i "ERROR.*" /tmp/KupdateLogfile.log ; then         
+    if ! grep -i "ERROR.*" /tmp/KupdateLogfile.log ; then         
         echo "upgrade complete"
         exit 0 #snd_complete
     else
