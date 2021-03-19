@@ -1,4 +1,5 @@
 #!/bin/bash 
+import os
 
 ###############################################################
 ##						Auxiliar Script
@@ -13,7 +14,10 @@ if ! apt update 2>&1 | grep -i "upgradable" ; then
     exit 3      #snd_noUpdate
 ## If there are updates aviable run the upgrade
 else
-    echo "update needed"
+    echo "update needed"    
+    
+    
+    
     ## send to konsole and to the logfile the upgrade process. 
     ## If you don't want to overwrite it add -a to the parameter
     ## Example: apt upgrade -y 2>&1 | tee -a /tmp/logfile.log

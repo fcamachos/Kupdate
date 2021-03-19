@@ -83,8 +83,13 @@ PASSWD=$(kdialog --title "$title" --password "$message")
 if [ $? = 0 ]; then
 	## send the notification of begining
  	snd_begin
+	#sh update_progress.sh "$lang"
 	## run the aux script with SU privileges!
 	echo $PASSWD | sudo -S sh "$SCRIPTPATH"/update_aux.sh
+	
+	#sh "$SCRIPTPATH"/update_progress.sh "$lang" "$PASSWD"
+
+
 	## check the exit code of the aux script
 	case $? in
 		0)
