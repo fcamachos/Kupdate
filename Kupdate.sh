@@ -76,6 +76,7 @@ snd_badPassword(){
 ###############################################################
 ##						Execution Settings
 ###############################################################
+
 ## Asking for the Super User password
 PASSWD=$(kdialog --title "$title" --password "$message")
 
@@ -83,13 +84,10 @@ PASSWD=$(kdialog --title "$title" --password "$message")
 if [ $? = 0 ]; then
 	## send the notification of begining
  	snd_begin
-	#sh update_progress.sh "$lang"
+
 	## run the aux script with SU privileges!
-	echo $PASSWD | sudo -S sh "$SCRIPTPATH"/update_aux.sh
+	echo $PASSWD | sudo -S bash "$SCRIPTPATH"/update_aux.sh # "$lang"
 	
-	#sh "$SCRIPTPATH"/update_progress.sh "$lang" "$PASSWD"
-
-
 	## check the exit code of the aux script
 	case $? in
 		0)
@@ -104,9 +102,12 @@ if [ $? = 0 ]; then
 		*)
 			snd_error		## send the notification of error on Upgrade
 			;;
-	esac		
+	esac
 else
 	snd_cancel		## send the notification of cancel update
 fi
+
+## Shows the log of the update
+kdialog --textbox /tmp/KupdateLogfile.log 512 256
 
 exit 0
